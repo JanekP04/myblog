@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/poppins": "^5.0.13",
+    "@fontsource/twinkle-star": "^5.0.19",
     "@iconify-json/material-symbols-light": "^1.1.16",
     "astro": "^4.5.12",
     "astro-icon": "^1.1.0",
