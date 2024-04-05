@@ -1,0 +1,15 @@
+---
+const { title, url, author, date, tag } = Astro.props;
+import { Icon } from 'astro-icon/components';
+---
+<div class="blog-post flex border-l-4 border-l-amber-500 border-b mx-1 my-2 px-2 py-2 shadow">
+    <div>
+        <h4 class=" font-semibold"><a class="text-zinc-950" href={url}>{title}</a></h4>
+        <p class="text-zinc-600 text-xs"><a href={url}>{author} | {tag} | {date}</a></p>
+    </div>
+    <button class=" ml-auto sm:pl-40">
+        <a href={url}>
+            <Icon name="material-symbols-light:arrow-right-alt-rounded" size={30} />
+        </a>
+    </button>
+</div>

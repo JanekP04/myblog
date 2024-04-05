@@ -1,0 +1,22 @@
+---
+import BaseLayout from './baselayout.astro';
+const { frontmatter } = Astro.props;
+import {Icon} from 'astro-icon/components';
+import '../styles/markdown.css'
+// const allPosts = await Astro.glob('../pages/posts/*.md');
+// const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+<BaseLayout pageTitle={frontmatter.title}>
+  <button class="go-back sm:hidden sticky top-0 w-full mx-0 py-1 shadow-sm bg-white ">
+    <a class="flex items-center text-md font-semibold text-zinc-950" href="/articles">
+      <Icon class='mr-2' name="material-symbols-light:arrow-left-alt-rounded" size={40}/>
+      {frontmatter.title}
+    </a>
+  </button>
+  <div class="markdown-layout px-3 mb-10 w-full sm:px-10 md:px-16 lg:px-40">
+    
+    <h1 class="border-l-4 border-l-amber-500 mt-6 pl-2">{frontmatter.title}</h1>
+    <p class="text-xs mb-6">Written by: {frontmatter.author} | {frontmatter.tags} | {frontmatter.pubDate.slice(0,10)}</p>
+    <slot />
+  </div>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<nav class="mt-auto sticky bottom-0 w-full flex justify-center items-center clear-both py-2 bg-white text-sm text-zinc-600 border-t border-t-zinc-300 sm:hidden">
+    <button class="nav-btns ">
+        <a href="/">
+        <Icon name="material-symbols-light:home-outline-rounded" size={40} />
+        Home</a>
+    </button>
+    <button class="nav-btns ">
+        <a href="/articles">
+        <Icon name="material-symbols-light:book-5-outline-rounded" size={40} />
+        Articles</a>
+    </button>    
+    <button class="nav-btns ">
+        <a href="/about">
+        <Icon name="material-symbols-light:feature-search-outline-rounded" size={40}/>
+        About</a>
+    </button>        
+</nav>

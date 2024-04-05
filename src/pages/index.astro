@@ -1,0 +1,48 @@
+---
+import Baselayout from "../layout/baselayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import { Icon } from "astro-icon/components";
+import '../styles/index.css';
+
+const currentDate = new Date();
+const allPosts = await Astro.glob('../pages/posts/*.md');
+
+const differencesInDays = allPosts.map(post => {
+    const pubDate = new Date(post.frontmatter.pubDate);
+    const differenceInTime = currentDate.getTime() - pubDate.getTime();
+    const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+    return differenceInDays;
+});
+
+const latestPosts = allPosts.filter((post, index) => differencesInDays[index] < 7);
+---
+<Baselayout title="Home Page">
+	<header class="hero text-center m-3">
+		<h1 class="flex justify-center text-xxl font-semibold">Welcome to my blog! </h1>
+		<p>Here you can study various subjects from IB class program about economics. <br>
+			Don't wait and explore our base of articles!</p>
+		<button class="CTA  bg-amber-500 hover:bg-amber-600  py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105 m-6">
+			<a class="flex items-center text-white" href="/articles">
+				Read More
+				<Icon class="ml-auto" name="material-symbols-light:arrow-right-alt-rounded" size={35}/>
+			</a>
+		</button>
+	</header>
+	<section class="latest m-6">
+		<ul class="latest-posts pl-0 list-none">
+			<h4 class="px-1">New this week:</h4>
+		
+				{latestPosts.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate))
+					.slice(0, 3).map((post) => (
+					<BlogPost
+						url={post.url}
+						title={post.frontmatter.title}
+						author={post.frontmatter.author}
+						date={post.frontmatter.pubDate.slice(0,10)}
+						tag={post.frontmatter.tags}
+					/>
+				))}
+		
+		</ul>
+	</section>
+</Baselayout>

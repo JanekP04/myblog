@@ -1,0 +1,27 @@
+p, ol, ul{
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+h1{
+    font-weight: 600;
+}
+h1, h2, h3, h4, h5{
+    margin-bottom: 2px;
+}
+h2, h3, h4, h5{
+    font-weight: 400;
+}
+ul, ol{
+    padding-left: 18px;
+}
+a, p, ul, ol{
+    color: rgb(82 82 91);
+}
+h1, h2, h3, h4, h5{
+    color: rgb(9 9 11);
+}
+@media screen and (min-width: 640px) {
+    p{
+        font-size: 0.95rem;
+    }
+}

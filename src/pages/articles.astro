@@ -1,0 +1,17 @@
+---
+import Baselayout from "../layout/baselayout.astro"
+import BlogPost from "../components/BlogPost.astro"
+const allPosts = await Astro.glob('../pages/posts/*.md')
+---
+<Baselayout title="Articles">
+	<ul class="pl-0" >
+		{allPosts.map((post) => (
+			<BlogPost
+				url={post.url}
+				title={post.frontmatter.title}
+				author={post.frontmatter.author}
+				date={post.frontmatter.pubDate.slice(0,10)}
+				tag={post.frontmatter.tags}
+			/>
+		))}	</ul>
+</Baselayout>

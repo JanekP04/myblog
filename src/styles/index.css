@@ -1,0 +1,8 @@
+.latest-posts li {
+    transition: transform 0.3s ease-in-out; 
+}
+  
+.latest-posts li:hover {
+    transform: scale(1.02);
+}
+  
