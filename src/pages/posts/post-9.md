@@ -1,4 +1,5 @@
 ---
+layout: '../../layout/markdownlayout.astro'
 title: "Real life examples global economics"
 pubDate: 2024-04-07
 author: "Alicja Pasterzak"
