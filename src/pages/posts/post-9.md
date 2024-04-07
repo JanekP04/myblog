@@ -2,7 +2,7 @@
 title: "Real life examples global economics"
 pubDate: 2024-04-07
 author: "Alicja Pasterzak"
-tags: ["global economy"]["real life examples"]["macroeconomics"]
+tags: ["global economy", "real life examples", "macroeconomics"]
 ---
 Example: **US trade deficit** <br>
 Date: _04.04.2024_ <br>
