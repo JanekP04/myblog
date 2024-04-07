@@ -3,7 +3,7 @@ layout: '../../layout/markdownlayout.astro'
 title: 'Real life examples global economics'
 pubDate: 2024-04-05
 author: 'Alicja Pasterzak'
-tags: ["global economy", " real life examples"]
+tags: ["global economy"]["real life examples"]
 ---
 Example: **Trade surplus in Canada**
 
